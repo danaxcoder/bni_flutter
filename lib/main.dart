@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
                 BoxDecoration(border: Border.all(color: Colors.blueAccent)),
                 child: InAppWebView(
                   initialUrlRequest:
-    URLRequest(url: WebUri('https://flutter.dev')),
+    URLRequest(url: WebUri('http://localhost:8080/assets/home.html')),
                   initialOptions: InAppWebViewGroupOptions(
                     crossPlatform: InAppWebViewOptions()
                   ),
