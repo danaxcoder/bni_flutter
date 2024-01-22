@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: InAppWebView(
         initialUrlRequest: URLRequest(
-          url: Uri.parse('http://localhost:8080/assets/home.html')),
+          url: WebUri('http://localhost:8080/assets/home.html')),
       )
     );
   }
