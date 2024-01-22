@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-void main() {
+InAppLocalhostServer localhostServer = new InAppLocalhostServer();
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  await localhostServer.start();
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -58,15 +61,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  InAppWebViewController? webViewController;
-  InAppWebViewSettings settings = InAppWebViewSettings(
-      isInspectable: false,
-      mediaPlaybackRequiresUserGesture: false,
-      allowsInlineMediaPlayback: true,
-      iframeAllow: "camera; microphone",
-      iframeAllowFullscreen: true);
-  String url = "";
-  double progress = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -89,13 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       body: InAppWebView(
-                  /*initialUrlRequest:
-                      URLRequest(url: WebUri("https://inappwebview.dev/")),*/
-                  onWebViewCreated: (controller) {
-                    webViewController = controller;
-                    controller.loadFile(assetFilePath: "assets/home.html");
-                  }
-                ),
+        initialUrlRequest: URLRequest(
+          url: Uri.parse('http://localhost:8080/assets/home.html')),
+      )
     );
   }
 }
