@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       URLRequest(url: WebUri("https://inappwebview.dev/")),*/
                   onWebViewCreated: (controller) {
                     webViewController = controller;
-                    controller.loadFile(assetFilePath: "assets/index.html");
+                    controller.loadFile(assetFilePath: "assets/home.html");
                   }
                 ),
     );
