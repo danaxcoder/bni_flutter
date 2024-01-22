@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
@@ -10,10 +8,6 @@ Future main() async {
 
   // start the localhost server
   await localhostServer.start();
-
-  if (Platform.isAndroid) {
-    await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
-  }
 
   runApp(MaterialApp(home: MyApp()));
 }
