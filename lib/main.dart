@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   InAppWebViewController? webViewController;
   InAppWebViewSettings settings = InAppWebViewSettings(
-      isInspectable: kDebugMode,
+      isInspectable: false,
       mediaPlaybackRequiresUserGesture: false,
       allowsInlineMediaPlayback: true,
       iframeAllow: "camera; microphone",
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: InAppWebView(
                   /*initialUrlRequest:
-                      URLRequest(url: WebUri("https://inappwebview.dev/")),*/,
+                      URLRequest(url: WebUri("https://inappwebview.dev/")),*/
                   onWebViewCreated: (controller) {
                     webViewController = controller;
                     controller.loadFile(assetFilePath: "assets/index.html");
