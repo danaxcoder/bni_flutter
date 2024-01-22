@@ -35,10 +35,12 @@ class _MyAppState extends State<MyApp> {
           child: Column(children: <Widget>[
             Expanded(
               child: InAppWebView(
-                initialUrlRequest: URLRequest(
+                /*initialUrlRequest: URLRequest(
                     url: Uri.parse("http://localhost:8080/assets/home.html")
-                ),
-                onWebViewCreated: (controller) {},
+                ),*/
+                onWebViewCreated: (controller) {
+                    controller.loadFile(assetFilePath: "assets/home.html");
+                },
                 onLoadStart: (controller, url) {},
                 onLoadStop: (controller, url) {},
               ),
