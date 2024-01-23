@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:webviewx/webviewx.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
