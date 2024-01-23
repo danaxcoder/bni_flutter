@@ -22,8 +22,10 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Info Promo BNI'),
       ),
       body: WebViewX(
+          width: 400,
+          height: 400,
     initialContent: '<h2> Hello, world! </h2>',
-    initialSourceType: SourceType.HTML,
+    initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
             'https://flutter.dev',
