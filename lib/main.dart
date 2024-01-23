@@ -19,13 +19,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebViewX(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-    initialContent: '',
+          width: 400,
+          height: 400,
+    initialContent: '<p>Hello world</p>',
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
-            'assets/assets/home.html',
+            'assets/home.html',
             SourceType.html,
             fromAssets: true
         );
