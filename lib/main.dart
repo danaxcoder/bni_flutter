@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
-            'assets/assets/home.html',
+            'assets/assets/assets/home.html',
             SourceType.html,
             fromAssets: true
         );
