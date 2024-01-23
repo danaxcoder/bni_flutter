@@ -28,8 +28,9 @@ class _MyAppState extends State<MyApp> {
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
-            'https://flutter.dev',
-            SourceType.url,
+            'assets/home.html',
+            SourceType.html,
+            fromAssets: true
         );
     })
     );
