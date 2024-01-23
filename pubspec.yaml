@@ -65,6 +65,16 @@ flutter:
     - assets/
     - assets/home.html
     - assets/assets/
+    - assets/assets/common/
+    - assets/assets/common/css/
+    - assets/assets/common/js/
+    - assets/assets/common/img/
+    - assets/assets/common/css/
+    - assets/assets/lib/jquery-ui/
+    - assets/assets/lib/jquery-ui/external/jquery/
+    - assets/assets/lib/jquery-ui/images/
+    - assets/assets/lib/ripple/
+    - assets/assets/lib/ripple/dist/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
