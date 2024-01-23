@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-final InAppLocalhostServer localhostServer = new InAppLocalhostServer();
-
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // start the localhost server
-  await localhostServer.start();
-
   runApp(MaterialApp(home: MyApp()));
 }
 
@@ -18,6 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+    late WebViewXController webviewController;
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +20,15 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: const Text('Info Promo BNI'),
       ),
-      body: Container(
-          child: Column(children: <Widget>[
-            Expanded(
-              child: InAppWebView(
-                /*initialUrlRequest: URLRequest(
-                    url: Uri.parse("http://localhost:8080/assets/home.html")
-                ),*/
-                onWebViewCreated: (controller) {
-                    controller.loadFile(assetFilePath: "assets/home.html");
-                },
-                onLoadStart: (controller, url) {},
-                onLoadStop: (controller, url) {},
-              ),
-            )]
-          )
-      ),
+      body: WebViewX(
+    initialContent: '<h2> Hello, world! </h2>',
+    initialSourceType: SourceType.HTML,
+    onWebViewCreated: (controller) { webviewController = controller;
+        webviewController.loadContent(
+            'https://flutter.dev',
+            SourceType.url,
+        );
+    })
     );
   }
 }
