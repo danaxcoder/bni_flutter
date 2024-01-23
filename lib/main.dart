@@ -18,13 +18,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Info Promo BNI'),
-      ),
       body: WebViewX(
-          width: 400,
-          height: 400,
-    initialContent: '<h2> Hello, world! </h2>',
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+    initialContent: '',
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
