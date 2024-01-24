@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
             fromAssets: true
         );
     },
-    onPageFinished: () {
+    onPageFinished: (value) {
         setState(() {
             finished: true;
         });
