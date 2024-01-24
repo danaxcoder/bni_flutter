@@ -19,9 +19,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
       super.initState();
-      new Timer(Duration(seconds: 5), () => {
+      var future = new Future.delayed(const Duration(seconds: 5), () => {
           setState(() {
-            finished: true
+            finished: true;
           });
       });
   }
