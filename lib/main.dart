@@ -26,9 +26,9 @@ class _MyAppState extends State<MyApp> {
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
             //'assets/assets/home.html',
-            'https://www.google.com',
-            SourceType.url,
-            fromAssets: true
+            'https://flutter.dev',
+            SourceType.url
+            //fromAssets: true
         );
     })
     );
