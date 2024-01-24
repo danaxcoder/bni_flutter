@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
                           height: 50,
                           child: LinearProgressIndicator(
                               color: Color(0xffff7f08),
-                              borderRadius: borderRadius.circular(25)
+                              borderRadius: BorderRadius.circular(25)
                           )
                       )
                   )
