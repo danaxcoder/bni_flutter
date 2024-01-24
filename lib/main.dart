@@ -19,9 +19,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: (() {
-          if (finished) {
-              return WebViewX(
+      body: Stack(
+                  children: [
+                      WebViewX(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
     initialContent: '<p>.</p>',
@@ -38,9 +38,8 @@ class _MyAppState extends State<MyApp> {
         setState(() {
             finished: true;
         });
-    });
-          } else {
-              return Container(
+    }),
+                        Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   color: Color(0xffe3e8eb),
@@ -54,9 +53,9 @@ class _MyAppState extends State<MyApp> {
                           )
                       )
                   )
-              );
-          }
-      })()
+              )
+                  ]
+              )
     );
   }
 }
