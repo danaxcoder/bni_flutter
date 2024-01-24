@@ -19,11 +19,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
       super.initState();
-      var future = new Future.delayed(Duration(seconds: 5), () {
-          setState(() {
-            finished = true;
-          });
-      });
   }
 
   @override
@@ -46,7 +41,7 @@ class _MyAppState extends State<MyApp> {
     },
     onPageFinished: (value) {
         setState(() {
-            finished: true;
+            finished = true;
         });
     }),
     (() {
