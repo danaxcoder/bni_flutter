@@ -39,7 +39,11 @@ class _MyAppState extends State<MyApp> {
             finished: true;
         });
     }),
-                        Container(
+    (() {
+        if (finished) {
+            return SizedBox.shrink();
+        } else {
+            return Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   color: Color(0xffe3e8eb),
@@ -53,7 +57,9 @@ class _MyAppState extends State<MyApp> {
                           )
                       )
                   )
-              )
+              );
+        }
+    }())
                   ]
               )
     );
