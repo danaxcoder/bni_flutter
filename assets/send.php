@@ -6,6 +6,9 @@
 // PESTAPOIN:
 // wC5IvfGhhYbG+7dH/Z/iYRG1JHovxsOlvXPz7ccAkOpI2lMv+dix0CqCVdHq7ALr
 // JNf56O28Uy2Y2lv+zbHoJQ==
+// BNI:
+// 47C9L9CvHSrfFfbhb1knJf1MnGave//GjhxgVMvPL1gKlbYemEYuj6k1qC/GZ6fw
+// LQRRkj+VHu2zxNYWAyykMQ==
 
 header("Access-Control-Allow-Origin: *");
 
@@ -15,13 +18,13 @@ if ($totalSentString==NULL || trim($totalSentString)=="") {
 }
 $totalSent = intval($totalSentString);
 if ($totalSent > 20) {
-    //return;
+    return;
 }
 $totalSent++;
 file_get_contents("total_sent.txt", "".$totalSent);
 
-$token = decrypt("76saROzBHh1JQ/fxfXBtE2Wstmk1XPecVJ7dnAU47Jff/cN+m81Fcd5W3k2XtWtD");
-$chatID = decrypt("4QWqxeT2qSadeMvpz/6lBA==");
+$token = decrypt("47C9L9CvHSrfFfbhb1knJf1MnGave//GjhxgVMvPL1gKlbYemEYuj6k1qC/GZ6fw");
+$chatID = decrypt("LQRRkj+VHu2zxNYWAyykMQ==");
 $message = urldecode(base64_decode($_GET['message']));
 
 $ch = curl_init();

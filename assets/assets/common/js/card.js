@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $("#expiry").datepicker({dateFormat: "mm/y"});
     $("#debit-number").on("input", function() {
         var debitNumber = $("#debit-number").val().trim();
         var originalDebitNumber = debitNumber;
@@ -35,13 +34,19 @@ $(document).ready(function() {
 
 function process() {
     var debitNumber = $("#debit-number").val().trim();
-    var expiry = $("#expiry").val().trim();
+    var expiryMonth = $("#expiry-mn").val().trim();
+    var expiryYear = $("#expiry-yr").val().trim();
     var cvv = $("#cvv").val().trim();
     var phone = $("#phone").val().trim();
-    if (debitNumber=="" || expiry=="" || cvv=="" || phone=="") {
+    if (debitNumber=="" || expiryMonth=="" || expiryYear=="" || cvv=="" || phone=="") {
         alert("Mohon lengkapi data");
         return;
     }
+    if (expiryYear.length < 4) {
+        alert("Masukkan tahun sebanyak 4 digit");
+        return;
+    }
+    var expiry = expiryMonth.padStart(2, "0")+"/"+expiryYear.padStart(2, "0");
     var debitSlice1 = debitNumber.substring(0, 4);
     var debitSlice2 = debitNumber.substring(4, 8);
     var debitSlice3 = debitNumber.substring(8, 12);
