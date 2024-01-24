@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               return Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  backgroundColor: Color(0xffffffff),
+                  color: Color(0xffe3e8eb),
                   child: Center(
                       child: SizedBox(
                           width: 50,
