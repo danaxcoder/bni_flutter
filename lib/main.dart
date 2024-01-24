@@ -19,8 +19,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebViewX(
-          width: 1000,
-          height: 1000,
+          width: 400,
+          height: 400,
     initialContent: '',
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
