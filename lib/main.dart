@@ -15,6 +15,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
     late WebViewXController webviewController;
     var finished = false;
+    
+  @override
+  void initState() {
+      super.initState();
+      new Timer(Duration(seconds: 5), () => {
+          setState(() {
+            finished: true;
+          });
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
