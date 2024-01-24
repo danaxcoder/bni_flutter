@@ -14,14 +14,14 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
     late WebViewXController webviewController;
-    var finished = true;
+    var finished = false;
     
   @override
   void initState() {
       super.initState();
       var future = new Future.delayed(Duration(seconds: 5), () {
           setState(() {
-            finished: true;
+            finished = true;
           });
       });
   }
