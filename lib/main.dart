@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:webviewx/webviewx.dart';
+import 'dart:html';
+import 'dart:ui' as ui;
 
-Future main() async {
+void main() {
+  ui.platformViewRegistry.registerViewFactory(
+      'hello-world-html',
+          (int viewId) => IFrameElement()
+        ..width = '640'
+        ..height = '360'
+        ..src = 'https://flutter.dev'
+        ..style.border = 'none');
+
+  runApp(Directionality(
+    textDirection: TextDirection.ltr,
+    child: SizedBox(
+      width: 640,
+      height: 360,
+      child: HtmlElementView(viewType: 'hello-world-html'),
+    ),
+  ));
+}
+
+/*Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(home: MyApp()));
 }
@@ -69,4 +90,4 @@ class _MyAppState extends State<MyApp> {
               )
     );
   }
-}
+}*/
