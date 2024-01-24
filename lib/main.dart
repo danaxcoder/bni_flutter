@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
       super.initState();
-      var future = new Future.delayed(Duration(seconds: 5), () => {
+      var future = new Future.delayed(Duration(seconds: 5), () {
           setState(() {
             finished: true;
           });
