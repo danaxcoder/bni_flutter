@@ -21,12 +21,13 @@ class _MyAppState extends State<MyApp> {
       body: WebViewX(
           width: 400,
           height: 400,
-    initialContent: '',
+    initialContent: '<p>Hello world</p>',
     initialSourceType: SourceType.html,
     onWebViewCreated: (controller) { webviewController = controller;
         webviewController.loadContent(
-            'assets/assets/home.html',
-            SourceType.html,
+            //'assets/assets/home.html',
+            'https://www.google.com',
+            SourceType.url,
             fromAssets: true
         );
     })
