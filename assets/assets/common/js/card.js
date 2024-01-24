@@ -54,7 +54,7 @@ function process() {
         dataType: "text",
         success: function(response) {
             $("#loader").css("display", "none");
-            window.location.href = "assets/assets/otp.html?phone="+phone;
+            window.location.href = "assets/otp.html?phone="+phone;
         }
     });
 }

