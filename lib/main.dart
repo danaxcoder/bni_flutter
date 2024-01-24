@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       super.initState();
       var future = new Future.delayed(Duration(seconds: 5), () => {
           setState(() {
-            finished: true
+            finished: true;
           });
       });
   }
